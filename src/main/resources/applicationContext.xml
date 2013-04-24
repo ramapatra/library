@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   
+       <import resource="applicationContext-web.xml"/>
+        <import resource="applicationContext-dao.xml"/>
+         <import resource="applicationContext-dataSource.xml"/>
+          <import resource="applicationContext-hibernate.xml"/>
+           <import resource="applicationContext-services.xml"/>
+
+
+
+    <bean id="applicationPropertyPlaceholderConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+          lazy-init="false">
+        <property name="locations">
+            <array>
+                <value>classpath:/application.properties</value>
+            </array>
+        </property>
+        <property name="ignoreResourceNotFound" value="false"/>
+    </bean>
+    
+   
+
+</beans>
